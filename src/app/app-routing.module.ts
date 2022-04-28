@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components
 
+import { EmployeeAddProfileComponent } from './components/employee-add-profile/employee-add-profile.component';
+import { EmployeeProfileComponent } from './components/employee-profile/employee-profile.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { CustomerProfileComponent } from './components/components-customers/customer-profile/customer-profile.component';
 import { CustomersListComponent } from './components/components-customers/customers-list/customers-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -41,6 +44,11 @@ const routes: Routes = [
   { path: 'list-owners/:_id/edit-owner', component: OwnersAddProfileComponent},
   { path: 'list-owners/:_id/add-restaurant', component: OwnersAddRestaurantsComponent},
   { path: 'list-owners/:_id/:_idrest/edit-restaurant', component: OwnersAddRestaurantsComponent},
+
+  { path: 'list-employee', component: EmployeeListComponent},
+  { path: 'list-employee/add-employee', component: EmployeeAddProfileComponent},
+  { path: 'list-employee/:_id', component: EmployeeProfileComponent},
+  { path: 'list-employee/:_id/edit-employee', component: EmployeeAddProfileComponent},
 
   { path: 'list-restaurants/add-restaurant', component: RestaurantAddProfileComponent},
   { path: 'list-restaurants', component: RestaurantsListComponent},

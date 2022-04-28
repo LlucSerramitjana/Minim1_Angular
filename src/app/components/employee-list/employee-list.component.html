@@ -11,10 +11,10 @@
         <a class="list-group-item list-group-item-action bg-light"> Tastes </a>
       </div>
     </div>
-
+  
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
-
+  
     <div id="page-content-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <!-- <button class="btn btn-primary" id="menu-toggle"> Menu </button>
@@ -37,42 +37,43 @@
           </ul>
         </div>
       </nav>
-
-      <div class="container mt-3">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <span class="title"> LLISTAT DE CUSTOMERS </span>
-                        <table *ngIf="listCustomers.length > 0" class="table table-striped mt-3">
-                         <thead>
-                           <tr>
-                             <th scope="col"> Name </th>
-                             <th scope="col"> Username </th>
-                             <th scope="col"> Email </th>
-                             <th scope="col"></th>
-                           </tr>
-                         </thead>
-                         <tbody>
-                           <tr *ngFor="let cust of listCustomers">
-                             <td> {{ cust.fullName }} </td>
-                             <td> {{ cust.customerName }} </td>
-                             <td> {{ cust.email }} </td>
-                             <td>
-                                 <i [routerLink]="['/list-customers', cust._id]" class="fa-solid fa-pen-to-square text-primary"> Profile </i>
-                             </td>
-                           </tr>
-                         </tbody>
-                       </table>
-                       <button class="btn btn-success float-end" [routerLink]="['/list-customers/add-customer']"> ADD CUSTOMER </button>
-                       <h5 style="text-align: start; margin-top: 10px;" *ngIf="listCustomers.length == 0"> No hi ha customers a la base de dades </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </div>
-
+  
+        <div class="container mt-3">
+          <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <span class="title"> EMPLOYEES LIST </span>
+                          <table *ngIf="listEmployee.length > 0" class="table table-striped mt-3">
+                           <thead>
+                             <tr>
+                               <th scope="col"> Name </th>
+                               <th scope="col"> Username </th>
+                               <th scope="col"> Email </th>
+                               <th scope="col"></th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                             <tr *ngFor="let employee of listEmployee">
+                               <td> {{ employee.fullName }} </td>
+                               <td> {{ employee.employeeName }} </td>
+                               <td> {{ employee.email }} </td>
+                               <td>
+                                   <i [routerLink]="['/list-employee', employee._id]" class="fa-solid fa-pen-to-square text-primary"> Profile </i>
+                               </td>
+                             </tr>
+                           </tbody>
+                         </table>
+                         <button class="btn btn-success float-end" [routerLink]="['/list-employee/add-employee']"> ADD EMPLOYEE </button>
+                         <h5 style="text-align: start; margin-top: 10px;" *ngIf="listEmployee.length == 0"> No hi ha employees a la base de dades </h5>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </div>
+  
+      </div>
+      <!-- /#page-content-wrapper -->
     </div>
-    <!-- /#page-content-wrapper -->
-  </div>
-  <!-- /#wrapper -->
+    <!-- /#wrapper -->
+  

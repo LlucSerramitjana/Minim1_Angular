@@ -1,0 +1,58 @@
+<div class="container mt-3">
+    <div class="class row">
+        <div class="col-lg-10 offset-lg-1">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="title"> {{ title | uppercase  }} </span>
+                    <form class="mt-3" [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="fullName" 
+                                class="form-control form-control-lg" placeholder="Full Name">
+                            <div class="text-danger"
+                                *ngIf="employeeForm.get('fullName')?.hasError('required') && employeeForm.get('fullName')?.touched">
+                                <span>El nom de l'employee és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="employeeName"
+                                class="form-control form-control-lg" placeholder="employee Name">
+                            <div class="text-danger"
+                                *ngIf="employeeForm.get('employeeName')?.hasError('required') && employeeForm.get('employeeName')?.touched">
+                                <span>El username de l'employee és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" ngModel email formControlName="email"
+                                class="form-control form-control-lg" placeholder="Email">
+                            <div class="text-danger"
+                                *ngIf="employeeForm.get('email')?.hasError('required') && employeeForm.get('email')?.touched">
+                                <span>L'email del employee és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3" *ngIf="employee?.fullName == null">
+                            <input type="text" formControlName="password"
+                                class="form-control form-control-lg" placeholder="Password">
+                            <div class="text-danger"
+                                *ngIf="employeeForm.get('password')?.hasError('required') && employeeForm.get('password')?.touched">
+                                <span>El password del employee és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="salary"
+                                class="form-control form-control-lg" placeholder="salary">
+                            <div class="text-danger"
+                                *ngIf="employeeForm.get('salary')?.hasError('required') && employeeForm.get('salary')?.touched">
+                                <span>El password del employee és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink=".." class="btn btn-secondary btn-lg float-start"> BACK </button>
+                            <button routerLink="/list-employee" *ngIf="this._id !== null" (click)="deleteEmployee()" class="btn btn-danger btn-lg float-mid"> DELETE </button>
+                            <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-success btn-lg float-end"> CONFIRM </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
